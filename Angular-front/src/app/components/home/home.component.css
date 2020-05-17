@@ -1,0 +1,9 @@
+body  {
+  background-image: url('../../../assets/images/st.jpg');
+  background-color: rgb(255, 217, 0);
+  height:600px;
+  width: 1535px;
+  background-repeat: no-repeat;
+
+  background-size: auto;
+}
