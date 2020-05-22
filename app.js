@@ -32,7 +32,7 @@ if(connection){
 
 }
 else{
-    console.log("Error connection");
+    console.log("database connection error");
 }
 
 
