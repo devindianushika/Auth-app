@@ -23,7 +23,7 @@ app.use(bodyParser.json())
 
 //give path of static files
 //path is "public" folder of current directory
-app.use(express.static (path.join(__dirname,"public")));
+// app.use(express.static (path.join(__dirname,"public")));
 // require ('./config/passport')(passport);
 
 const connection  = mongoose.connect(config.database, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -38,6 +38,12 @@ else{
 
 
 app.use("/user",user);
+
+// app.use(express.static("./client/build"));
+
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+// });
 
 app.get("/",function(req,res){
     res.send("hello im server");
