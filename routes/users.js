@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const config = require("../config/database");
 // const passport = require('passport');
 
-var jwthelper = (req, res, next) => {
+const jwthelper = (req, res, next) => {
   console.log("jwt helper .....");
   const token = req.headers.authorization;
   //  req.body.token || req.query.token || req.headers['x-access-token']
@@ -21,6 +21,7 @@ var jwthelper = (req, res, next) => {
           .json({ error: true, message: "unauthorized_access" });
       } else {
         console.log(decoded);
+    //////_id/////
         req.id = decoded.user._id;
         next();
       }
@@ -96,7 +97,8 @@ router.post("/login", function (req, res) {
 router.post("/profile", jwthelper, (req, res) => {
   console.log("authenticated " + req.id);
 
-  res.json({ userid: req.id });
+   res.json({ userid: req.id });
+  // res.json({user:req.user});
 });
 
 // function verifyToken(req,res,next){

@@ -53,8 +53,9 @@ export class AuthService {
     const headers = new HttpHeaders();
     headers.append('Authorization', this.authtoken);
     headers.append('Content-Type', 'application/json');
-    return this.http.get('http://localhost:3000/user/profile',
+    return this.http.post('http://localhost:3000/user/profile',
       { headers: headers }).pipe(map(response => response));
+      
   }
 
   fetchToken() { // get the token which stored in localstorage
